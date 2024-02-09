@@ -4,4 +4,4 @@
 
 ## Getting started
 
-This personal advisor app will guide you to financial independence
+Hi. This personal advisor app will guide you to financial independence
