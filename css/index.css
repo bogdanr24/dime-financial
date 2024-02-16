@@ -1,9 +1,9 @@
 body {
-  background-color: lightred;
+  background: radial-gradient(circle, #ffffff, #ffcccc);
 }
 
 h1 {
-  color: white;
+  color: black;
   text-align: center;
 }
 
