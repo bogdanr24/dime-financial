@@ -12,6 +12,26 @@
 <div class="content">
   <p>Our AI Chatbot is designed to help you with all finanical needs and queries.</p>
 </div>
+<button type="button" class="collapsible">How can FinBot help me with my finances?</button>
+<div class="content">
+  <p>FinBot takes in real time stock-market information/market openings and runs them through our algorithms to give you the most helpful answer based on your financial queries.</p>
+</div>
+<button type="button" class="collapsible">Is my data safe with FinBot?</button>
+<div class="content">
+  <p>Yes. All inputted data is reliably stored on CloudFlare servers and databases, and we promise to not ever reveal any personal information.</p>
+</div>
+<button type="button" class="collapsible">How do I start a conversation with FinBot?</button>
+<div class="content">
+  <p>You can start a conversation by typing in the input box below the welcome message.</p>
+</div>
+<button type="button" class="collapsible">What information do I need to provide for FinBot to help me effectively?</button>
+<div class="content">
+  <p>It is up to your discretion how much data you want to provide to FinBot. Our analysis recommend basic background information such as place of living, gross income and age/occupation as reliable starter points.</p>
+</div>
+<button type="button" class="collapsible">What should I do if I encounter technical problems with FinBot?</button>
+<div class="content">
+  <p>We recommend refreshing the page whenever you encounter a problem with FinBot. Aside from that, you can also send in a bug report so that we may further optimize FinBot accordingly to your needs.</p>
+</div>
 
 <script>
   var coll = document.getElementsByClassName("collapsible");
@@ -21,10 +41,10 @@ for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
     } else {
-      content.style.display = "block";
+      content.style.maxHeight = content.scrollHeight + "px";
     }
   });
 }
