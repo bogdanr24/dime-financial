@@ -3,14 +3,16 @@ background: radial-gradient(circle, #dddddd, #cccccc);
 }
 
 h1 {
-  color: black;
-  text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px; 
+    color: black;
+    text-align: center;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
 
-  font-size: 20px;
+  font-size: 22px;
 }
 <<<<<<< HEAD
 a:link, a:visited {
@@ -33,7 +35,7 @@ a:link, a:visited {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .active, .collapsible:hover {
