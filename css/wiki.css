@@ -14,7 +14,6 @@ p {
 
   font-size: 22px;
 }
-<<<<<<< HEAD
 a:link, a:visited {
   background-color: #6B6E70;
   color: white;
@@ -24,8 +23,6 @@ a:link, a:visited {
   text-decoration: none;
   display: inline-block;
 }
-=======
-
 .collapsible {
   background-color: #eee;
   color: #444;
@@ -44,8 +41,10 @@ a:link, a:visited {
 
 .content {
   padding: 0 18px;
-  display: none;
+  background-color: white;
+  max-height: 0;
   overflow: hidden;
-  background-color: #f1f1f1;
+  transition: max-height 0.2s ease-out;
 }
->>>>>>> 6a4bad43f925a16571cc363d7328a63c74f41f20
+
+
