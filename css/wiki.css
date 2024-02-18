@@ -12,3 +12,12 @@ p {
 
   font-size: 20px;
 }
+a:link, a:visited {
+  background-color: #6B6E70;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;
+  display: inline-block;
+}
