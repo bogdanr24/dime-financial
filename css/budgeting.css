@@ -38,4 +38,5 @@ textarea {
   resize: none;
   margin:auto;
   display: block;
+  font-family: "Roboto Mono", monospace;
 }
