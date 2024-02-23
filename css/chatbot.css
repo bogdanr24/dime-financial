@@ -21,3 +21,17 @@ a:link, a:visited {
   text-decoration: none;
   display: inline-block;
 }
+
+textarea {
+  width: 80%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  margin:auto;
+  display: block;
+}
