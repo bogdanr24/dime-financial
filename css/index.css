@@ -1,18 +1,16 @@
 body {
   background-color: #222629;
+  color: #F5FEFD;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
-  font-family: Roboto, sans-serif;
   font-size: 45px;
-  color: black;
   text-align: center;
 }
 
 p {
-  font-family: Montserrat, sans-serif;
   font-size: 20px;
-  color: #F5FEFD;
 }
 a:link, a:visited {
   background-color: #6B6E70;
