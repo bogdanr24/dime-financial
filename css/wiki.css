@@ -7,11 +7,13 @@ body {
 h1 {
   font-size: 45px;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 p {
   font-size: 20px;
   color: #222629;
+  font-family: "Raleway", sans-serif;
 }
 a:link, a:visited {
   background-color: #6B6E70;
@@ -21,6 +23,7 @@ a:link, a:visited {
   vertical-align: bottom;
   text-decoration: none;
   display: inline-block;
+  font-family: "Raleway", sans-serif;
 }
 .collapsible {
   background-color: #eee;
@@ -32,10 +35,12 @@ a:link, a:visited {
   text-align: left;
   outline: none;
   font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .active, .collapsible:hover {
   background-color: #ccc;
+  font-family: "Raleway", sans-serif;
 }
 
 .content {
@@ -44,6 +49,7 @@ a:link, a:visited {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  font-family: "Raleway", sans-serif;
 }
 
 

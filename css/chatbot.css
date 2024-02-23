@@ -7,10 +7,12 @@ body {
 h1 {
   font-size: 45px;
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 p {
   font-size: 20px;
+  font-family: "Raleway", sans-serif;
 }
 a:link, a:visited {
   background-color: #6B6E70;
@@ -20,6 +22,7 @@ a:link, a:visited {
   vertical-align: bottom;
   text-decoration: none;
   display: inline-block;
+  font-family: "Raleway", sans-serif;
 }
 
 textarea {
@@ -34,4 +37,5 @@ textarea {
   resize: none;
   margin:auto;
   display: block;
+  font-family: "Raleway", sans-serif;
 }
