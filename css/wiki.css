@@ -1,18 +1,16 @@
 body {
-background: radial-gradient(circle, #dddddd, #cccccc);
+  background-color: #222629;
+  color: #F5FEFD;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 45px; 
-    color: black;
-    text-align: center;
+  font-size: 45px;
+  text-align: center;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
-
-  font-size: 22px;
+  font-size: 20px;
 }
 a:link, a:visited {
   background-color: #6B6E70;
