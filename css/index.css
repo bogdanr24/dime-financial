@@ -1,5 +1,7 @@
 body {
   background-color: #222629;
+  color: #F5FEFD;
+  
 }
 
 h1 {
@@ -12,7 +14,6 @@ h1 {
 p {
   font-family: Montserrat, sans-serif;
   font-size: 20px;
-  color: #F5FEFD;
 }
 a:link, a:visited {
   background-color: #6B6E70;
