@@ -18,7 +18,15 @@
 <p>This Chat Bot is meant to be your portable financial advisor, that will help you to achieve attain financial freedom. Input your question in the input box and click send.</p>
 <label for="prompt"></label>
 <textarea id="prompt" name="prompt" placeholder="Enter your prompt here"></textarea>
-
+<div class="container">
+  <input type="text" id="inputBox" placeholder="Type here...">
+  <div class="buttons">
+    <button onclick="insertText('Tell me about yourself')">About Yourself</button>
+    <button onclick="insertText('What can you do?')">Capabilities</button>
+    <button onclick="insertText('How do you work')">Functionality</button>
+  </div>
+</div>
+<script src="chatbot.js"></script>
 </body>
 </html> 
 
