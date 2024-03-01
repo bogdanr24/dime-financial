@@ -10,21 +10,24 @@ body {
 body nav {
   display: flex;
   justify-content: space-around;   
-  height: 50px;
+  height: 64px;
   margin-bottom: 2%;
 }
 body nav button {
   height: 100%;
   width: 20%;
-  background-color: #474b4f;
+  background-color: #222629;
+  color: white;
   border: none;
   font-family: "Raleway", sans-serif;
-  transition: background-color 1s;
+  transition: background-color .3s;
 }
 
 body nav button:hover {
   background-color: #86c232;
   font-weight: bolder;
+  color: #222629;
+
 }
 
 body nav a {
