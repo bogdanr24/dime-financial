@@ -12,7 +12,16 @@ body nav {
   justify-content: space-around;   
   height: 64px;
   margin-bottom: 2%;
+  border-bottom: solid;
+  border-color: #86c232;
 }
+
+.buttons {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 body nav button {
   height: 100%;
   width: 20%;
@@ -21,13 +30,13 @@ body nav button {
   border: none;
   font-family: "Raleway", sans-serif;
   transition: background-color .3s;
+  cursor: pointer;
 }
 
 body nav button:hover {
   background-color: #86c232;
   font-weight: bolder;
   color: #222629;
-
 }
 
 h1 {
@@ -69,11 +78,7 @@ textarea {
   font-family: "Roboto Mono", monospace;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-}
+
 
 .buttons {
   margin-top: 20px;

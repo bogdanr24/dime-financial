@@ -12,6 +12,8 @@ body nav {
   justify-content: space-around;   
   height: 64px;
   margin-bottom: 2%;
+  border-bottom: solid;
+  border-color: #86c232;
 }
 body nav button {
   height: 100%;
