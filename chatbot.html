@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head> 
+</head>
 <body>
 	<nav>
     <button onclick="location.href='index.html'">Home</button>
@@ -19,17 +19,18 @@
 	</nav>
 <h1>Chat Bot</h1>
 <p>This Chat Bot is meant to be your portable financial advisor, that will help you to achieve attain financial freedom. Input your question in the input box and click send.</p>
-<form name="textPrompt" action="">
+<form name="textPrompt" onsubmit="handleSubmit(event)">
   <textarea id="prompt" name="prompt" placeholder="Enter your prompt here"></textarea>
+  <button type="submit">Submit</button>
   <div class="container">
     <div class="buttons">
-      <button onclick="insertText('Tell me about yourself')">About Yourself</button>
-      <button onclick="insertText('What can you do?')">Capabilities</button>
-      <button onclick="insertText('How do you work')">Functionality</button>
+      <button type="button" onclick="insertText('How can I create a budget?')">Budgeting</button>
+      <button type="button" onclick="insertText('How can I start investing with a small amount of money?')">Investing</button>
+      <button type="button" onclick="insertText('Should I prioritize paying off high-interest debt or saving for retirement?')">Debt Management</button>
     </div>
   </div>
 </form>
-<script src="chatbot.js"></script>
+<script src="chatbotinput.js"></script>
 </body>
 </html> 
 

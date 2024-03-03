@@ -1,21 +1,4 @@
-function insertText(text) {
-    var inputBox = document.getElementById("prompt");
-    inputBox.value = text;
-}
 
-function submitOnEnter(event) {
-    if (event.which === 13 && !event.shiftKey) {
-        if (!event.repeat) {
-            const newEvent = new Event("submit", {cancelable: true})
-            event.target.form.dispatchEvent(newEvent);
-            event.target.value ="";
-        }
-
-        event.preventDefault();
-    }
-}
-
-document.getElementById("prompt").addEventListener("keydown", submitOnEnter);
 import { config } from "dotenv" // used to get the api key from the env file along with its configs
 config()
 
@@ -23,9 +6,9 @@ import OpenAI from "openai" // Open AI import
 import readline from "readline" //the module used to listen for user inputs and wait
 //the key related stuff
 const openAi = new OpenAI(
-  {
+{
     apiKey: process.env.OPEN_AI_API_KEY,
-  }
+}
 )
 
 const userInterface = readline.createInterface({
