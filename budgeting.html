@@ -18,80 +18,89 @@
     <button onclick="location.href='qanda.html'">Q and A</button>
 	</nav>
 
-<h1>Personal Budget</h1>
-<p>My first paragraph.</p>
-
-<question>
-  <p>
-    Question 1
-  </p>
-  <label for="question1"></label>
-  <textarea id="question1" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 2
-  </p>
-  <label for="question2"></label>
-  <textarea id="question2" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 3
-  </p>
-  <label for="question3"></label>
-  <textarea id="question3" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 4
-  </p>
-  <label for="question4"></label>
-  <textarea id="question4" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 5
-  </p>
-  <label for="question5"></label>
-  <textarea id="question5" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 6
-  </p>
-  <label for="question6"></label>
-  <textarea id="question6" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 7
-  </p>
-  <label for="question7"></label>
-  <textarea id="question7" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 8
-  </p>
-  <label for="question8"></label>
-  <textarea id="question8" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 9
-  </p>
-  <label for="question9"></label>
-  <textarea id="question9" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-<question>
-  <p>
-    Question 10
-  </p>
-  <label for="question10"></label>
-  <textarea id="question10" name="prompt" placeholder="Enter your prompt here"></textarea>
-</question>
-
+<p id="intro">Take this quick survey to get detailed feedback and advice about your monthly spendings:</p>
+<form action="" id="form"></form>
+  <question>
+    <p>
+      What is your name?
+    </p>
+    <label for="question1"></label>
+    <textarea id="question1" name="prompt" placeholder="Enter your name here (Ex: Aleksei)"></textarea>
+  </question>
+  <question>
+    <p>
+      How old are you?
+    </p>
+    <label for="question2"></label>
+    <textarea id="question2" name="prompt" placeholder="Enter your age here (Ex: 45)"></textarea>
+  </question>
+  <question>
+    <p>
+      What is you marital status? 
+    </p>
+    <label for="question3"></label>
+    <textarea id="question3" name="prompt" placeholder="Single/Married"></textarea>
+  </question>
+  <question>
+    <p>
+      How many dependants do you have?
+    </p>
+    <label for="question4"></label>
+    <textarea id="question4" name="prompt" placeholder="Enter a number here (Ex: 4)"></textarea>
+  </question>
+  <question>
+    <p>
+      Where do you live?
+    </p>
+    <label for="question5"></label>
+    <textarea id="question5" name="prompt" placeholder="Enter your city here (Ex: 'Toronto')"></textarea>
+  </question>
+  <question>
+    <p>
+      What is your net income?
+    </p>
+    <label for="question6"></label>
+    <textarea id="question6" name="prompt" placeholder="Enter a number here (Ex: 99000)"></textarea>
+  </question>
+  <question>
+    <p>
+      What is your gross income?
+    </p>
+    <label for="question7"></label>
+    <textarea id="question7" name="prompt" placeholder="Enter a number here (Ex: 144000)"></textarea>
+  </question>
+  <question>
+    <p>
+      How much do you typically spend for food per month?
+    </p>
+    <label for="question8"></label>
+    <textarea id="question8" name="prompt" placeholder="Enter a number here (Ex: 2000)"></textarea>
+  </question>
+  <question>
+    <p>
+      How much do you typically spend for rent/mortgage per month?
+    </p>
+    <label for="question9"></label>
+    <textarea id="question9" name="prompt" placeholder="Enter a number here (Ex: 6500)"></textarea>
+  </question>
+  <question>
+    <p>
+      How much do you typically spend for your hobbies/wants per month?
+    </p>
+    <label for="question10"></label>
+    <textarea id="question10" name="prompt" placeholder="Enter a number here (Ex: 4000)"></textarea>
+  </question>
+  <question>
+    <p>
+      How much do you typically invest per month?
+    </p>
+    <label for="question11"></label>
+    <textarea id="question11" name="prompt" placeholder="Enter a number here (Ex: 1000)"></textarea>
+  </question>
+</form>
+<button id="nextQuestion">Save and go to next question</button>
+<div id="results"></div>
+<script src="budgeting.js"></script>
 </body>
 </html> 
 
