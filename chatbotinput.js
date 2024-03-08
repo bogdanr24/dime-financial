@@ -1,5 +1,5 @@
 function insertText(text) {
-    var inputBox = document.getElementById("prompt");
+    var inputBox = document.querySelector("input");
     inputBox.value = text;
 }
 

@@ -1,40 +1,55 @@
+const API_KEY = "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";
+const submitButton = document.querySelector('#submit');
+const outPutElement = document.querySelector('#output');
+const inputElement = document.querySelector('input');
+const historyElement = document.querySelector(".history");
 
-import { config } from "dotenv" // used to get the api key from the env file along with its configs
-config()
 
-import OpenAI from "openai" // Open AI import
-import readline from "readline" //the module used to listen for user inputs and wait
-//the key related stuff
-const openAi = new OpenAI(
-{
-    apiKey: process.env.OPEN_AI_API_KEY,
+
+
+
+async function getMessage() {
+    console.log('clicked');
+    const options = {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "assistant", content: "answer as if your a confident financial advisor heres the question:"+inputElement.value }],
+            temperature: 0.7,
+            max_tokens: 150,
+            top_p: 1.0,
+            frequency_penalty: 0.0,
+            presence_penalty: 0.0
+        })
+    }
+
+
+ 
+
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", options);
+        const data = await response.json();
+        console.log(data);
+        outPutElement.textContent = data.choices[0].message.content
+        if(data.choices[0].message.content){
+            const pElement = document.createElement('p');
+            pElement.textContent = inputElement.value
+            historyElement.append(pElement)
+        }
+
+
+
+        
+        
+    } catch (error) {
+        console.error(error);
+    }
+
 }
-)
 
-const userInterface = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
+submitButton.addEventListener('click', getMessage);
 
-// Listening for user input events
-userInterface.prompt()
-console.log("User: ", "");
-
-
-userInterface.on("line", async input => {
-  if (input.toLowerCase() === "goodbye") {
-    console.log("Goodbye!");
-    userInterface.close();
-    return;
-  }
-  const airesponse = await openAi.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: input }],
-  })
-    // Displays the api's output
-  console.log("Finbot:", airesponse.choices[0].message.content)
-
-    // Prompting the user for input again
-  console.log("User: ", "");
-  userInterface.prompt()
-})

@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,405;1,405&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/chatbot.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ChatGPT testing html</title>
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-	<nav>
-    <button onclick="location.href='index.html'">Home</button>
-    <button onclick="location.href='budgeting.html'">Budgeting</button> 
-    <button onclick="location.href='chatbot.html'">Chatbot</button>
-    <button onclick="location.href='wiki.html'">Wiki</button>  
-    <button onclick="location.href='qanda.html'">Q and A</button>
-	</nav>
-<h1>Chat Bot</h1>
-<p>This Chat Bot is meant to be your portable financial advisor, that will help you to achieve attain financial freedom. Input your question in the input box and click send.</p>
-<form name="textPrompt" onsubmit="handleSubmit(event)">
-  <textarea id="prompt" name="prompt" placeholder="Enter your prompt here"></textarea>
-  <button type="submit">Submit</button>
-  <div class="container">
-    <div class="buttons">
-      <button type="button" onclick="insertText('How can I create a budget?')">Budgeting</button>
-      <button type="button" onclick="insertText('How can I start investing with a small amount of money?')">Investing</button>
-      <button type="button" onclick="insertText('Should I prioritize paying off high-interest debt or saving for retirement?')">Debt Management</button>
-    </div>
-  </div>
-</form>
-<script src="chatbotinput.js"></script>
+
+    <section class="side-bar">
+        <button>+New chat</button>
+        <div class="history"></div>
+        <div class="nav">
+            <p>FAQ (Auto fill)
+                <div class="buttons">
+                    <button type="button" onclick="insertText('How can I create a budget?')">Budgeting</button>
+                    <button type="button" onclick="insertText('How can I start investing with a small amount of money?')">Investing</button>
+                    <button type="button" onclick="insertText('Should I prioritize paying off high-interest debt or saving for retirement?')">Debt Management</button>
+                </div>
+            </p>
+        </div>
+    </section>
+    <section class="main">
+        <div class="navbar">
+            <nav>
+                <button onclick="location.href='index.html'">Home</button>
+                <button onclick="location.href='budgeting.html'">Budgeting</button> 
+                <button onclick="location.href='chatbot.html'">Chatbot</button>
+                <button onclick="location.href='wiki.html'">Wiki</button>  
+                <button onclick="location.href='qanda.html'">Q and A</button>
+            </nav>
+        </div>
+        <h1>Finbot</h1>
+        <p id="output"></p>
+        <div class="bottom-section">
+            <div class="input-container">
+                <input id="input"/>
+                <button id="submit">➯</button>
+            </div>
+        </div>
+        <p class="info">Chat GPT Mar 8 Version. Finbot, made to help with finance questions</p>
+    </section>
+    
+    <script src="chatbot.js"></script>
+    <script src="chatbotinput.js"></script>
 </body>
-</html> 
-
-
+</html>
