@@ -95,3 +95,40 @@ textarea {
   background-color: #474b4f;
   color: #61892f;
 }
+
+#gptResponse {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-weight: 350;
+  width: 80%;
+  align-self: center;
+  font-style: italic;
+  line-height: 200%;
+  color: #222629;
+  font-weight: 800;
+  background-color: #61892f;
+  padding: 2%;
+  border-radius: 20px;
+}
+#intro{
+  font-weight: 600;
+}
+#restartButton {
+  height: 100%;
+  width: 20%;
+  background-color: #222629;
+  color: white;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  transition: background-color .3s;
+}
+
+#restartButton:hover {
+  background-color: #86c232;
+  font-weight: bolder;
+  color: #222629;
+
+}
