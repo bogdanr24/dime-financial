@@ -13,6 +13,12 @@ async function displayResults(answers) {
     // Use the response from the GPT API
     // Displaying the response in the newly created 'gptResponse' element
     newDiv.innerHTML = gptResponse;
+    const restartButton = document.createElement('button');
+    newbutton.setAttribute('id', 'restartButton');
+    restartButton.innerHTML = 'Restart';
+    restartButton.addEventListener('click', function() {
+        currentQuestion = 1;
+    });
 }
 async function sendAnswersToGPT(answers) {
     const prompt = JSON.stringify(answers);
@@ -24,7 +30,7 @@ async function sendAnswersToGPT(answers) {
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
-                messages: [{ role: "assistant", content: `Based on these questions and answers provide me with some finacial advise. Be sure to mention this person's name and their specific stats to make it seem like you took note of their information. ${prompt}`}],
+                messages: [{ role: "assistant", content: `Based on these questions and answers provide me with some finacial advise. Be sure to adress this person as if you are talking to them. Net income is how muchthis person makes after taxes. Gross is before detucting the taxes. Mention their name and their specific stats they entered to make it seem like you took note of their information. ${prompt}`}],
                 temperature: 0.7,
                 max_tokens: 150,
                 top_p: 1.0,
@@ -44,7 +50,15 @@ async function sendAnswersToGPT(answers) {
 
 function goToNextQuestion() {
     const answerInput = document.getElementById(`question${currentQuestion}`);
+
+    // Check if the answer is empty and alert the user if it is
+    if (answerInput.value.trim() === '') {
+        alert('Please answer the question before moving on');
+        return; // Stop the function from proceeding further
+    }
+
     const questionText = answerInput.previousElementSibling.textContent;
+
     // Save both the question and the answer in the answers object
     answers[`Question ${currentQuestion}`] = {
         question: questionText,
@@ -56,14 +70,17 @@ function goToNextQuestion() {
     if (currentQuestion < totalQuestions) {
         currentQuestion += 1;
         const nextQuestionInput = document.getElementById(`question${currentQuestion}`);
-        nextQuestionInput.parentElement.style.display = 'block';
+        if (nextQuestionInput) {
+            nextQuestionInput.parentElement.style.display = 'block';
+        }
     } else {
         console.log('All answers:', answers);
         document.getElementById('intro').innerHTML = 'Thanks for taking this survey, here are some suggestions based on your responses:';
         document.getElementById('nextQuestion').remove();
-        displayResults(answers); 
+        displayResults(answers);
     }
 }
+
 for (let i = 2; i <= totalQuestions; i++) {
     const questionInput = document.getElementById(`question${i}`);
     if (questionInput && questionInput.parentElement) {
