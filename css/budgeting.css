@@ -132,3 +132,7 @@ textarea {
   color: #222629;
 
 }
+#pieChart {
+  max-width: 300px;
+  max-height: 300px;
+}
