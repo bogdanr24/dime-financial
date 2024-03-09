@@ -4,7 +4,7 @@ const answers = {};
 
 async function displayResults(answers) {
     // Create a new div element to store responses from the GPT API
-    document.getElementById('pieChart').style.opacity = '100%';
+    document.getElementById('pieChart', 'results').style.opacity = '100%';
     const newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gptResponse');
     // Append the new div to the document body

@@ -139,3 +139,6 @@ textarea {
   max-width: 50%;
   max-height: 50%;
 }
+#results {
+  opacity: 0;
+}
