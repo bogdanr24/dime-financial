@@ -133,6 +133,7 @@ textarea {
 
 }
 #pieChart {
+  align-items: center;
   opacity: 0.0;
   height: 500;
   width: 500;
