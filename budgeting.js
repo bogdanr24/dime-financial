@@ -1,10 +1,10 @@
+const answers = {};
 let currentQuestion = 1; 
 const totalQuestions = 11; 
-const answers = {}; 
 
 async function displayResults(answers) {
     // Create a new div element to store responses from the GPT API
-    document.getElementById('pieChart', 'results').style.opacity = '100%';
+    pieChart(answers);
     const newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gptResponse');
     // Append the new div to the document body
@@ -89,7 +89,31 @@ for (let i = 2; i <= totalQuestions; i++) {
     }
 
 }
-
+async function pieChart(answers) {
+    const dataValues = [
+        parseFloat(answers.question8),
+        parseFloat(answers.question9),
+        parseFloat(answers.question10),
+        parseFloat(answers.question11)
+    ];
+    var data = {
+        labels: ["Food", "Rent/Mortgage", "Hobbies/Wants", "Investing"],
+        datasets: [{
+          data: dataValues,
+          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#65bf4d"], // Colors for each category
+        }]
+      };
+      
+      // Get the context of the canvas element
+      var ctx = document.getElementById("pieChart").getContext("2d");
+    
+      
+      // Create a pie chart
+      var pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: data
+      });
+      
+}
 document.getElementById('nextQuestion').addEventListener('click', goToNextQuestion);
-
 
