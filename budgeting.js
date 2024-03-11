@@ -91,10 +91,10 @@ for (let i = 2; i <= totalQuestions; i++) {
 }
 async function pieChart(answers) {
     const dataValues = [
-        parseFloat(answers.question8),
-        parseFloat(answers.question9),
-        parseFloat(answers.question10),
-        parseFloat(answers.question11)
+        parseFloat(answers[`Question 8`].answer),
+        parseFloat(answers[`Question 9`].answer),
+        parseFloat(answers[`Question 10`].answer),
+        parseFloat(answers[`Question 11`].answer)
     ];
     var data = {
         labels: ["Food", "Rent/Mortgage", "Hobbies/Wants", "Investing"],
@@ -108,10 +108,18 @@ async function pieChart(answers) {
       var ctx = document.getElementById("pieChart").getContext("2d");
     
       
+
       // Create a pie chart
       var pieChart = new Chart(ctx, {
         type: 'pie',
-        data: data
+        data: data,
+        options: {
+            legend: {
+                labels: {
+                    fontColor: "White"
+                }
+            }
+        }
       });
       
 }

@@ -132,13 +132,18 @@ textarea {
   color: #222629;
 
 }
+#Container {
+  display: inline-block;
+}
 #pieChart {
-  align-items: center;
+  display: block;
+  margin: 0 auto;
+  align-self: center;
   height: 500;
   width: 500;
   max-width: 50%;
   max-height: 50%;
 }
 #results {
-  opacity: 0;
+  text-align: center;
 }
