@@ -7,41 +7,34 @@
     <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-
-    <section class="side-bar">
-        <button>New chat</button>
-        <div class="history"></div>
-        <div class="nav">
-            <p>FAQ (Auto fill)
-                <div class="buttons">
-                    <button type="button" onclick="insertText('How can I create a budget?')">Budgeting</button>
-                    <button type="button" onclick="insertText('How can I start investing with a small amount of money?')">Investing</button>
-                    <button type="button" onclick="insertText('Should I prioritize paying off high-interest debt or saving for retirement?')">Debt Management</button>
+    <div class="app"> <!-- Added container for flex display -->
+        <section class="side-bar">
+            <button>New chat</button>
+                <div class="faq">FAQ (Auto fill) <!-- Changed from <p> for valid HTML -->
+                    <div class="buttons">
+                        <button type="button" onclick="insertText('How can I create a budget?')">Budgeting</button>
+                        <button type="button" onclick="insertText('How can I start investing with a small amount of money?')">Investing</button>
+                        <button type="button" onclick="insertText('Should I prioritize paying off high-interest debt or saving for retirement?')">Debt Management</button>
+                    </div>
                 </div>
-            </p>
-        </div>
-    </section>
-    <section class="main">
-        <div class="navbar">
-            <nav>
-                <button onclick="location.href='index.html'">Home</button>
-                <button onclick="location.href='budgeting.html'">Budgeting</button> 
-                <button onclick="location.href='chatbot.html'">Chatbot</button>
-                <button onclick="location.href='wiki.html'">Wiki</button>  
-                <button onclick="location.href='qanda.html'">Q and A</button>
-            </nav>
-        </div>
-        <h1>Finbot</h1>
-        <p id="output"></p>
-        <div class="bottom-section">
+        </section>
+        <section class="main">
+                <nav>
+                    <button onclick="location.href='index.html'">Home</button>
+                    <button onclick="location.href='budgeting.html'">Budgeting</button> 
+                    <button onclick="location.href='chatbot.html'">Chatbot</button>
+                    <button onclick="location.href='wiki.html'">Wiki</button>  
+                    <button onclick="location.href='qanda.html'">Q and A</button>
+                </nav>
+            <h1>Finbot</h1>
+            <p id="output"></p>
             <div class="input-container">
-                <input id="input"/>
-                <button id="submit">➯</button>
+                <input id="input" aria-label="Type your message here"><button id="submit"><img src="send.png" alt=""></input></button>
             </div>
-        </div>
-        <p class="info">Chat GPT Mar 8 Version. Finbot, made to help with finance questions</p>
-    </section>
-    
+            <p class="info">Finbot, made to help with finance questions</p>
+            </div>
+        </section>
+    </div>
     <script src="chatbot.js"></script>
     <script src="chatbotinput.js"></script>
 </body>
