@@ -114,11 +114,13 @@ async function pieChart(answers) {
         type: 'pie',
         data: data,
         options: {
+            plugins: {
             legend: {
                 labels: {
-                    fontColor: "White"
+                    color: "white"
                 }
             }
+        }
         }
       });
       
