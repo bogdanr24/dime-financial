@@ -44,6 +44,7 @@ a:link, a:visited {
   border-radius: 20px;
   font-family: "Raleway", sans-serif;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02)
+
 }
 
 
@@ -119,4 +120,13 @@ p {
   font-size: 1em;
   color: #fff;
   font-weight: 300;
+}
+
+.container .card .content a {
+  margin: 12px;
+  padding: 10px;
+}
+.container .card .content a:hover {
+  color: #86c232;
+
 }
