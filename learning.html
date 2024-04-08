@@ -1,27 +1,96 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,405;1,405&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">      
- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/qanda.css">
-</head> 
+    <title>Learning</title>
+    <link rel="stylesheet" href="css/learning.css">
+</head>
 <body>
-<nav>
-<button onclick="location.href='index.html'">Home</button>
-<button onclick="location.href='budgeting.html'">Budgeting</button> 
-<button onclick="location.href='chatbot.html'">Chatbot</button>
-<button onclick="location.href='wiki.html'">Wiki</button>  
-<button onclick="location.href='learning.html'">Learning</button>
-</nav>
-<h1>Learning</h1>
-<p>This is where the Learning page will be located.</p>
+    <nav>
+        <!-- nav bar n' its stuff-->
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='budgeting.html'">Budgeting</button> 
+        <button onclick="location.href='chatbot.html'">Chatbot</button>
+        <button onclick="location.href='wiki.html'">Wiki</button>  
+        <button onclick="location.href='learning.html'">Learning</button>
+    </nav>
+    <!-- Container for the cards -->
+    <div class="container">
 
+        <!-- First card -->
+        <div class="card">
+            <!-- Cont. of the first card -->
+            <div class="content">
+                <!-- Title -->
+                <h2>01</h2>
+                <!-- Heading -->
+                <h3>Stocks</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+
+
+    <!-- Second card -->
+    <div class="card">
+        <!-- Content of the second card -->
+        <div class="content">
+            <!-- Title of the second card -->
+            <h2>02</h2>
+            <!-- Heading -->
+            <h3>Investing</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+
+
+
+    <!-- Third card -->
+    <div class="card">
+        <!-- Content of the third card -->
+        <div class="content">
+            <!-- Title of the third card -->
+            <h2>03</h2>
+            <!--Heading-->
+            <h3>Budgeting</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+
+        <!-- Fourth card -->
+        <div class="card">
+            <!-- Content of the fourth card -->
+            <div class="content">
+                <!-- Title -->
+                <h2>04</h2>
+                <!--Heading-->
+                <h3>Learning - the L</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+</div>
+<!--The tilt effect scrpit call-->
+<script type="text/javascript" src="learning_tilt.js"></script>
+<script type="text/javascript">
+
+    var cards = document.querySelectorAll(".card");
+    cards.forEach(function(card) {
+        VanillaTilt.init(card, {
+            max: 20,
+            speed: 400
+        });
+    });
+</script>
 </body>
-</html> 
-
-
+</html>
