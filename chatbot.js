@@ -3,7 +3,8 @@ const submitButton = document.querySelector('#submit');
 //const outPutElement = document.querySelector('#output');
 const inputElement = document.querySelector('input');
 const historyElement = document.querySelector(".history");
-const div = document.querySelector("#text");
+const div = document.querySelector("#outputText");
+const outputCursor = document.getElementById("output-cursor");
 let textGenerated = "this is a test";
 
 
@@ -41,7 +42,7 @@ async function getMessage() {
             //pElement.textContent = inputElement.value
             //historyElement.append(pElement)
         //}    
-        textTypingEffect(div, textGenerated);
+        textTypingEffect(div, textGenerated, outputCursor);
 
     } catch (error) {
         console.error(error);
@@ -49,18 +50,27 @@ async function getMessage() {
 
 }
 
-submitButton.addEventListener('click', getMessage);
+function resetInputBox() {
+    document.getElementById("input").value = '';
+}
 
-function textTypingEffect(element, text, i = 0) {
+submitButton.addEventListener('click', getMessage);
+submitButton.addEventListener('click', resetInputBox);
+
+function textTypingEffect(element, text, cursorElement, i = 0) {
     if (i === 0) {
         element.textContent = "";
+        cursorElement.style.visibility = "visible";
     }
 
     element.textContent += text[i];
 
+    cursorElement.style.left = element.offsetWidth + "px";
+
     if (i === text.length - 1) {
+        cursorElement.style.visibility = "hidden";
         return;
     }
 
-    setTimeout(() => textTypingEffect(element,text, i+1), 10);
+    setTimeout(() => textTypingEffect(element,text,cursorElement, i+1), 10);
 }

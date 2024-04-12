@@ -27,10 +27,15 @@
                     <button onclick="location.href='learning.html'">Learning</button>
                 </nav>
             <h1>Finbot</h1>
-            <p id="output"></p>
-            <p id="text"></p>
+            <div class="output-container">
+                <span id="outputText"></span>
+                <span id="output-cursor"></span>
+            </div>
             <div class="input-container">
-                <input id="input" aria-label="Type your message here"><button id="submit"><img src="send.png" alt=""></input></button>
+                <input id="input" placeholder="Type your message here">
+                <button id="submit">
+                    <img src="send.png" alt="">
+                </button>
             </div>
             <p class="info">Finbot, made to help with finance questions</p>
             </div>
