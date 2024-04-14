@@ -94,7 +94,7 @@ p {
   text-align: center;
   transform: translateY(100px); /* Translate the element vertically by 100 pixels */
   opacity: .2; /* Set the opacity to 0.2 */
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .container .card:hover .content
 {
