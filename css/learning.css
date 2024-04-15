@@ -91,9 +91,8 @@ p {
 }
 .container .card .content
 {
-  padding: 20px;
   text-align: center;
-  transform: translateY(10%); /* Translate the element vertically by 100 pixels */
+  transform: translateY(19%); /* Translate the element vertically by 100 pixels */
   opacity: .2; /* Set the opacity to 0.2 */
   transition: 0.2s;
 }
@@ -104,10 +103,12 @@ p {
   opacity: 1; /* Set the opacity to 1 (fully transparent) */
 }
 .container .card .content h2 {
+  padding: 3%;
   position: absolute;
-  top: -80px;
-  right: 30px;
+  top: -115px;
+  right: 5px;
   font-size: 8em;
+  text-align: right;
   color: rgba(255, 255, 255, 0.05);
   pointer-events: none;
 }
@@ -118,8 +119,10 @@ p {
 }
 
 .container .card .content p {
+  padding: 10px;
   font-size: 1em;
   color: #fff;
+  text-align: left;
   font-weight: 300;
 }
 
