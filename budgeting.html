@@ -17,8 +17,8 @@
     <button onclick="location.href='wiki.html'">Wiki</button>  
     <button onclick="location.href='learning.html'">Learning</button>
 	</nav>
-
 <p id="intro">Take this quick survey to get detailed feedback and advice about your monthly spendings:</p>
+<div id="loading" style="height: 0;"></div>
 <form action="" id="form"></form>
   <question>
     <p>
@@ -100,6 +100,7 @@
 </form>
 <button id="nextQuestion">Save and go to next question</button>
 <div id="results"></div>
+<script src="https://cdn.jsdelivr.net/npm/lottie-web@latest/build/player/lottie.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="budgeting.js"></script>
 <canvas id ="pieChart" width="400" height="400"></canvas> 

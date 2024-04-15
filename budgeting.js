@@ -2,17 +2,26 @@ const answers = {};
 let currentQuestion = 1; 
 const totalQuestions = 11; 
 
+var animation = lottie.loadAnimation({
+    container: document.getElementById('loading'), // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'loading.json' // the path to the animation json
+});
+
+
 async function displayResults(answers) {
+    // Use the response from the GPT API
+    // Displaying the response in the newly created 'gptResponse' element
+    const gptResponse = await sendAnswersToGPT(answers);
     // Create a new div element to store responses from the GPT API
-    pieChart(answers);
     const newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gptResponse');
     // Append the new div to the document body
     document.body.appendChild(newDiv);
     // Call the sendAnswersToGPT function with the answers object
-    const gptResponse = await sendAnswersToGPT(answers);
-    // Use the response from the GPT API
-    // Displaying the response in the newly created 'gptResponse' element
+    pieChart(answers);
     newDiv.innerHTML = gptResponse;
     const restartButton = document.createElement('button');
     newbutton.setAttribute('id', 'restartButton');
@@ -22,6 +31,8 @@ async function displayResults(answers) {
     });
 }
 async function sendAnswersToGPT(answers) {
+    document.getElementById('loading').style.height = '300px';
+    animation.play();
     const prompt = JSON.stringify(answers);
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
@@ -39,6 +50,8 @@ async function sendAnswersToGPT(answers) {
                 presence_penalty: 0.0
             })
         });
+        document.getElementById('loading').style.height = '0px';
+        animation.stop();
         // Check if the API call was successful, if not throw an error code
         if (!response.ok) {
             throw new Error(`API call failed with status: ${response.status}`);
