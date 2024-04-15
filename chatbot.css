@@ -166,6 +166,10 @@ nav button {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    height: auto;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
 }
 
 #output-cursor {
@@ -173,7 +177,7 @@ nav button {
     width: 0.1em;
     height: 1em;
     background-color: white;
-    margin-left: 0.1em;
+    margin-left: 0;
     visibility: visible;
     animation: blink .6s linear infinite alternate;
 }
