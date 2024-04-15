@@ -14,7 +14,7 @@
         <button onclick="location.href='learning.html'">Learning</button>
     </nav>
     <!-- Container for the cards -->
-    <div class="container">
+    <div class="container" id="blur">
 
         <!-- First card -->
         <div class="card">
@@ -27,10 +27,13 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a href="#">Read More</a>
+                <a href="#" onclick="toggle('popup1')">Read More</a>
+
             </div>
         </div>
 
+
+        
 
 
     <!-- Second card -->
@@ -44,7 +47,7 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a href="#">Read More</a>
+            <a href="#" onclick="toggle('popup2')">Read More</a>
         </div>
     </div>
 
@@ -61,7 +64,7 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a href="#">Read More</a>
+            <a href="#" onclick="toggle('popup3')">Read More</a>
         </div>
     </div>
 
@@ -76,21 +79,107 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a href="#">Read More</a>
+                <a href="#" onclick="toggle('popup4')">Read More</a>
             </div>
         </div>
+        <!--  Add this for each new card needed-->
+            <!-- <div class="card"> -->
+            <!-- <div class="content"> -->
+                <!-- <h2>04</h2> -->
+                <!-- <h3>Learning minus the L</h3> -->
+                <!-- <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p> -->
+                <!-- <a href="#" onclick="toggle('popup4')">Read More</a> -->
+                <!-- Increase the popup number based on number of cards -->
+            <!-- </div>
+        </div>  -->
 </div>
-<!--The tilt effect scrpit call-->
+
+<!-- each read more card has an individual id which increments by one for every readmore cards required, and all are under the class popup -->
+<div id="popup1" class="popup">
+    <!-- Heading of the expanded read more tab -->
+    <h2>Card1</h2>
+        <!-- body of the expanded read more tab -->
+    <p>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <!-- Button to colapse the readmore pop up, increment popup id according to card being closed-->
+    <a href="#" onclick="toggle('popup1')">Collapse</a>
+</div>
+
+<div id="popup2" class="popup">
+    <!-- Popup content for card 2 -->
+    <h2>Card2</h2>
+    <p>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <a href="#" onclick="toggle('popup2')">Collapse</a>
+</div>
+
+<div id="popup3" class="popup">
+    <!-- Popup content for card 3 -->
+    <h2>Card3</h2>
+    <p>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <a href="#" onclick="toggle('popup3')">Collapse</a>
+</div>
+
+<div id="popup4" class="popup">
+    <!-- Popup content for card 4 -->
+    <h2>Card4</h2>
+    <p>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <a href="#" onclick="toggle('popup4')">Collapse</a>
+</div>
+
+<!--The tilt effect script call-->
 <script type="text/javascript" src="learning_tilt.js"></script>
 <script type="text/javascript">
 
     var cards = document.querySelectorAll(".card");
     cards.forEach(function(card) {
         VanillaTilt.init(card, {
-            max: 20,
+            max: 15,
             speed: 400
         });
     });
 </script>
+
+<script type="text/javascript">
+// used to tilt the colapse button in the read more popup
+    var cards = document.querySelectorAll(".popup a");
+    cards.forEach(function(card) {
+        VanillaTilt.init(card, {
+            max: 30,
+            speed: 100
+        });
+    });
+</script>
+
+<script type="text/javascript">
+// Used to blure the background when a readmore button is pressed, and also make the popup visible
+    function toggle(popupId) {
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        // This part makes the popup visible
+        var popup = document.getElementById(popupId);
+        popup.classList.toggle('active');
+    }
+// If you click a blured part of the background while the readmore popup is open it closes it.
+document.getElementById('blur').addEventListener('click', function(event) {
+        if (event.target.id === 'blur') {
+            var blur = document.getElementById('blur');
+            var popups = document.querySelectorAll('.popup');
+            blur.classList.remove('active');
+            popups.forEach(function(popup) {
+                popup.classList.remove('active');
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
