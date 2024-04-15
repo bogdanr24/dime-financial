@@ -65,7 +65,8 @@ function textTypingEffect(element, text, cursorElement, i = 0) {
 
     element.textContent += text[i];
 
-    cursorElement.style.left = element.offsetWidth + "px";
+    const rect = element.getBoundingClientRect();
+    cursorElement.style.left = (rect.left + rect.width) + "px";
 
     if (i === text.length - 1) {
         cursorElement.style.visibility = "hidden";
