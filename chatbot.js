@@ -1,3 +1,4 @@
+// Author: Shone Mathew, 4/12/24
 const API_KEY = "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";
 const submitButton = document.querySelector('#submit');
 //const outPutElement = document.querySelector('#output');
