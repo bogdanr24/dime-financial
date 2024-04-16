@@ -1,3 +1,5 @@
+// Modified by Shone Mathew, 4/12/24
+// From Free Code Camp ChatGPT Course by AniaKubow, 4/19/2023
 function insertText(text) {
     var inputBox = document.querySelector("input");
     inputBox.value = text;
