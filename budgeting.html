@@ -100,6 +100,24 @@
 </form>
 <button id="nextQuestion">Save and go to next question</button>
 <div id="results"></div>
+<script>
+  // Get the textarea elements and the next question button
+  var textareas = document.querySelectorAll("textarea");
+  var nextQuestionButton = document.getElementById("nextQuestion");
+
+  // Add event listener for keypress  on any of the texts
+  textareas.forEach(function(textarea) {
+      textarea.addEventListener("keypress", function(event) {
+          // Check if the pressed key is Enter, then blocks standard response to enter, and clicks the button
+          if (event.keyCode === 13) {
+              event.preventDefault();
+              nextQuestionButton.click();
+          }
+      });
+  });
+        // Authorded by Shone MAthew 4/19/24
+        // inspired by Coding Artist "Trigger Button Click with JS"
+</script>
 <script src="https://cdn.jsdelivr.net/npm/lottie-web@latest/build/player/lottie.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="budgeting.js"></script>
