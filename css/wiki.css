@@ -56,12 +56,13 @@ a:link, a:visited {
   font-family: "Raleway", sans-serif;
 }
 .collapsible {
-  background-color: #86c232;
-  color: #222629;
+  background-color: #474b4f;
+  color: #61892f;
   cursor: pointer;
   padding: 16px;
   border-radius: 7px;
   margin-left: 10%;
+  margin-bottom: 2px;
   width: 80%;
   border: none;
   text-align: left;
@@ -71,8 +72,8 @@ a:link, a:visited {
 }
 
 .active, .collapsible:hover {
-  background-color: #474b4f;
-  color: #61892f;
+  background-color: #86c232; 
+  color: #222629;
   font-family: "Raleway", sans-serif;
 }
 
