@@ -197,9 +197,8 @@ transition: 0.5s;
   text-align: center;
   margin-left: 35%;
   margin-right: 35%;
-  background-color: #86c232;
-  width: 30%;
-  color: #222629;
+  background-color: #474b4f;
+  color: #61892f;
   border: none;
   font-family: "Raleway", sans-serif;
   transition: background-color .3s;
@@ -209,6 +208,6 @@ transition: 0.5s;
   font-size: 15px;
 }
 .chatbot-button:hover {
-  background-color: #474b4f;
-  color: #61892f;
+  background-color: #86c232;
+  color: #222629;
 }
