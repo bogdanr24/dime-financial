@@ -56,15 +56,15 @@ a:link, a:visited {
   font-family: "Raleway", sans-serif;
 }
 .collapsible {
-  background-color: #474b4f;
-  color: #61892f;
+  background-color: #222629;
+  color: white;
   cursor: pointer;
   padding: 16px;
   border-radius: 7px;
   margin-left: 10%;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   width: 80%;
-  border: none;
+  border: solid 2px #86c232;
   text-align: left;
   outline: none;
   font-size: 18px;
@@ -75,18 +75,26 @@ a:link, a:visited {
   background-color: #86c232; 
   color: #222629;
   font-family: "Raleway", sans-serif;
+  font-weight: bolder;
 }
 
 .content {
   padding: 0 18px;
   width: 76%;
-  border-radius: 2px;
+  border-radius: 7px;
   margin-left: 10%;
+  margin-bottom: 10px;
   background-color: rgb(175, 181, 171);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   font-family: "Raleway", sans-serif;
+}
+.content p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 
