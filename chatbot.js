@@ -56,7 +56,8 @@ async function getMessage() {
 function resetInputBox() {
     document.getElementById("input").value = '';
 }
-
+//Authored by Hoang Minh Vu Le 4/12/2024
+//From dcode youtube video 
 submitButton.addEventListener('click', getMessage);
 submitButton.addEventListener('click', resetInputBox);
 
@@ -68,9 +69,6 @@ function textTypingEffect(element, text, cursorElement, i = 0) {
     }
 
     element.textContent += text[i];
-
-    //const rect = element.getBoundingClientRect();
-    //cursorElement.style.left = (rect.left + rect.width) + "px";
 
     if (i === text.length - 1) {
         cursorElement.style.visibility = "hidden";
