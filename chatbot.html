@@ -9,6 +9,7 @@
 <body>
     <!--Created by Shone Mathew, April 7 2024-->
 
+
     <div class="app"> <!-- Added container for flex display -->
         <section class="side-bar">
             <button>New chat</button>
@@ -44,6 +45,26 @@
         </section>
     </div>
     <script src="chatbot.js"></script>
-    <script src="chatbotinput.js"></script>
+    <script src="chatbotinput.js">
+        
+    </script>
+    <script>
+        // Get the textarea elements and the next question button
+        var textareas = document.querySelectorAll(".input-container");
+        var nextQuestionButton = document.getElementById("submit");
+      
+        // Add event listener for keypress event 
+        textareas.forEach(function(textarea) {
+            textarea.addEventListener("keypress", function(event) {
+          // Check if the pressed key is Enter, then blocks standard response to enter, and clicks the button
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    nextQuestionButton.click();
+                }
+            });
+        });
+        // Authorded by Shone MAthew 4/19/24
+        // inspired by Coding Artist "Trigger Button Click with JS"
+        </script>
 </body>
 </html>
