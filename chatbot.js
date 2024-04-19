@@ -7,6 +7,7 @@ const inputElement = document.querySelector('input');
 const historyElement = document.querySelector(".history");
 const div = document.querySelector("#outputText");
 const outputCursor = document.getElementById("output-cursor");
+const outputContainer = document.querySelector(".output-container");
 let textGenerated = "this is a test";
 
 
@@ -63,6 +64,7 @@ function textTypingEffect(element, text, cursorElement, i = 0) {
     if (i === 0) {
         element.textContent = "";
         cursorElement.style.visibility = "visible";
+        outputContainer.style.borderWidth = "2px";
     }
 
     element.textContent += text[i];
