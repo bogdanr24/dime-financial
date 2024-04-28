@@ -1,11 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
   body {
     background-color: #222629;
-    color: #F5FEFD;
+    color: #ffffff;
+
   }
   body nav {
     display: flex;
@@ -19,7 +21,7 @@
     height: 100%;
     width: 20%;
     background-color: #222629;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     font-family: "Raleway", sans-serif;
     transition: background-color .3s;
@@ -47,37 +49,82 @@
     width: 70%;
     font-weight: 400;
   }
-  question p {
-    font-size: 25px;
-    font-family: "Raleway", sans-serif;
-    margin-left: 10%;
-    margin-top: 8%;
-    font-weight: 350;
+  /* Created by Bogdan Radzevich 4/28/2024
+  Using tutorial by Coding Journey */
+  /* Function used to create the sizes, amount of things displayed and the duration */
+  :root {
+    --marquee-width: 100%;
+    --marquee-height: 6vh;
+    /* --marquee-elements: 12; */ /* defined with JavaScript */
+    --marquee-elements-displayed: 3;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
   }
-  a:link, a:visited {
-    background-color: #6B6E70;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    vertical-align: bottom;
-    text-decoration: none;
-    display: inline-block;
-    font-family: "Raleway", sans-serif;
+  
+  .marquee {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    background-color: #111;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+
   }
-  textarea {
-    width: 80%;
-    height: 50px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
-    margin:auto;
-    display: block;
-    font-family: "Roboto Mono", monospace;
-    margin-top: 2%;
+  .marquee:before, .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, #111 0%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, #111 0%, transparent 100%);
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
   }
 
+  /* .marquee-content:hover {
+    animation-play-state: paused;
+  } */
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+  }
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+    white-space: nowrap;
+  }
   
+  
+  @media (max-width: 600px) {
+    html { font-size: 12px; }
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+    .marquee:before, .marquee:after { width: 5rem; }
+  }
+  /*Sets the marquee to the bottom */
+  div.marquee {
+    position: absolute;
+    bottom: 10px;
+    border: 3px solid #86c232;
+  }
