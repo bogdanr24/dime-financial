@@ -15,21 +15,38 @@ async function displayResults(answers) {
     // Use the response from the GPT API
     // Displaying the response in the newly created 'gptResponse' element
     const gptResponse = await sendAnswersToGPT(answers);
-    // Create a new div element to store responses from the GPT API
-    const newDiv = document.createElement('div');
-    newDiv.setAttribute('id', 'gptResponse');
-    // Append the new div to the document body
-    document.body.appendChild(newDiv);
-    // Call the sendAnswersToGPT function with the answers object
-    pieChart(answers);
-    newDiv.innerHTML = gptResponse;
-    const restartButton = document.createElement('button');
-    newbutton.setAttribute('id', 'restartButton');
-    restartButton.innerHTML = 'Restart';
-    restartButton.addEventListener('click', function() {
-        currentQuestion = 1;
+        // Save the gpt response in local storage
+        localStorage.setItem('gptResponse', gptResponse);
+        // Display the response on the page
+        displayResponse(gptResponse);
+        // Display the pie chart
+        pieChart(answers);
+    }
+    
+    // Function to display the response on the page
+    function displayResponse(response) {
+        const newDiv = document.createElement('div');
+        newDiv.setAttribute('id', 'gptResponse');
+        newDiv.innerHTML = response;
+        document.body.appendChild(newDiv);
+    
+        // Create a restart button
+        const restartButton = document.createElement('button');
+        newbutton.setAttribute('id', 'restartButton');
+        restartButton.innerHTML = 'Restart';
+        restartButton.addEventListener('click', function() {
+            currentQuestion = 1;
+        });
+    }
+    
+    // Function to check if there is a saved response in local storage when the page loads if so load in the response
+    window.addEventListener('load', function() {
+        const savedResponse = localStorage.getItem('gptResponse');
+        if (savedResponse) {
+            displayResponse(savedResponse);
+        }
     });
-}
+    
 async function sendAnswersToGPT(answers) {
     document.getElementById('loading').style.height = '300px';
     animation.play();
