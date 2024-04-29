@@ -37,19 +37,23 @@ function fetchData() {
         marqueeContent.innerHTML += `<li>Metadata: ${metadata}</li>`;
         marqueeContent.innerHTML += `<li>Last Updated: ${lastUpdated}</li>`;
         marqueeContent.innerHTML += `<li>Top Gainers: ${topGainers}</li>`;
+        marqueeContent.innerHTML += `<li></li>`;
         marqueeContent.innerHTML += `<li>Top Losers: ${topLosers}</li>`;
+        marqueeContent.innerHTML += `<li></li>`;
         marqueeContent.innerHTML += `<li>Most Actively Traded: ${mostActivelyTraded}</li>`;
+        marqueeContent.innerHTML += `<li></li>`;
+        for(let i=0; i<marqueeElementsDisplayed; i++) {
+            marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+        }
+        root.style.setProperty("--marquee-elements", marqueeContent.children.length);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
 }
 
-root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 
-for(let i=0; i<marqueeElementsDisplayed; i++) {
-  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-}
+
 
 fetchData(); // Call the function
 root.style.setProperty("--marquee-elements", marqueeContent.children.length);
