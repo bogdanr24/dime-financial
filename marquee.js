@@ -11,7 +11,7 @@ const marqueeContent = document.querySelector("ul.marquee-content");
 //Aleksei Nikitin 4/28/2024
 //Using ChatGPT
 //AlphaVantage URL endpoint for the API request
-const url = 'https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=I00CO3XRPVZ7M1PI'; // Replace 'demo' with your actual API key
+const url = 'https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=TGQQ83UIEDFX2TFY'; 
 
 function fetchData() {
     fetch(url, {
@@ -30,17 +30,22 @@ function fetchData() {
     .then(data => {
         console.log(data);
         let lastUpdated = data['last_updated'];
-        let topGainers = data['top_gainers'].slice(0, 10).join(' ');
-        let topLosers = data['top_losers'].slice(0, 10).join(' ');
-        let mostActivelyTraded = data['most_actively_traded'].slice(0, 10).join(' ');
+        // Assuming data is the parsed JSON object from the API
+        let topGainers = data['top_gainers'];
+
+// Check if topGainers is defined and is an array
+    
+           
+        let mostActivelyTraded = data['most_actively_traded'];
         let metadata = data['metadata'];
         marqueeContent.innerHTML += `<li>Metadata: ${metadata}</li>`;
         marqueeContent.innerHTML += `<li>Last Updated: ${lastUpdated}</li>`;
-        marqueeContent.innerHTML += `<li>Top Gainers: ${topGainers}</li>`;
+        for (i = 0; i < 11; i++) {
+            document.querySelector('marquee-content') += `<li>${topGainers[i]['ticker']} - Price: ${topGainers[i]['price']}, Change: ${topGainers[i]['change_amount']} (${topGainers[i]['change_percentage']})</li>`;
+        };
         marqueeContent.innerHTML += `<li></li>`;
-        marqueeContent.innerHTML += `<li>Top Losers: ${topLosers}</li>`;
         marqueeContent.innerHTML += `<li></li>`;
-        marqueeContent.innerHTML += `<li>Most Actively Traded: ${mostActivelyTraded}</li>`;
+        //marqueeContent.innerHTML += `<li>Most Actively Traded: ${mostActivelyTraded}</li>`;
         marqueeContent.innerHTML += `<li></li>`;
         for(let i=0; i<marqueeElementsDisplayed; i++) {
             marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
