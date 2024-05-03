@@ -32,6 +32,7 @@ function fetchData() {
         let lastUpdated = data['last_updated'];
         // Assuming data is the parsed JSON object from the API
         let topGainers = data['top_gainers'];
+        let topLosers = data['top_losers'];
 
 // Check if topGainers is defined and is an array
     
@@ -40,13 +41,14 @@ function fetchData() {
         let metadata = data['metadata'];
         marqueeContent.innerHTML += `<li>Metadata: ${metadata}</li>`;
         marqueeContent.innerHTML += `<li>Last Updated: ${lastUpdated}</li>`;
+        marqueeContent.innerHTML += `<h1>Top Gainers:</li>`
         for (i = 0; i < 11; i++) {
-            document.querySelector('marquee-content') += `<li>${topGainers[i]['ticker']} - Price: ${topGainers[i]['price']}, Change: ${topGainers[i]['change_amount']} (${topGainers[i]['change_percentage']})</li>`;
+            document.querySelector('body > .marquee > .marquee-content').innerHTML += `<li>${topGainers[i]['ticker']} - Price: $${topGainers[i]['price']}, Change: $${topGainers[i]['change_amount']} (${topGainers[i]['change_percentage']})</li>`;
         };
-        marqueeContent.innerHTML += `<li></li>`;
-        marqueeContent.innerHTML += `<li></li>`;
+        for (i = 0; i < 11; i++) {
+            document.querySelector('body > .marquee > .marquee-content').innerHTML += `<li>${topLosers[i]['ticker']} - Price: $${topLosers[i]['price']}, Change: $${topLosers[i]['change_amount']} (${topLosers[i]['change_percentage']})</li>`;
+        };
         //marqueeContent.innerHTML += `<li>Most Actively Traded: ${mostActivelyTraded}</li>`;
-        marqueeContent.innerHTML += `<li></li>`;
         for(let i=0; i<marqueeElementsDisplayed; i++) {
             marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
         }
