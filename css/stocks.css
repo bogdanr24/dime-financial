@@ -128,3 +128,22 @@
     bottom: 0;
     border: 3px solid #86c232;
   }
+  #marqueeButton {
+    position: fixed;
+    bottom: var(--marquee-height);
+    background-color: #86c232;
+    color: #222629;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    transition: background-color .3s;
+    padding: .5% 1% .5% 1%;
+    font-size: 20px;
+    font-weight: 700;
+    right: 0%;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+  #marqueeButton:hover {
+    background-color: #474b4f;
+    color: #61892f;
+  }

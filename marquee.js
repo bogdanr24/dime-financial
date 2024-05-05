@@ -3,8 +3,9 @@
 const root = document.documentElement;
 const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
 const marqueeContent = document.querySelector("ul.marquee-content");
-
-
+const marqueeButton = document.getElementById("marqueeButton");
+const marqueeClass = document.querySelector(".marquee");
+const marqueeHeight = getComputedStyle(root).getPropertyValue("--marquee-height");
 
 
 
@@ -58,7 +59,21 @@ function fetchData() {
         console.error('There was a problem with the fetch operation:', error);
     });
 }
+/* Added by Bogdan Radzevich May 5th, 2024 
+Makes the button hide the marquee and show it on click*/
 
+marqueeButton.addEventListener("click", event => {
+    if (marqueeClass.style.display === "none"){
+        marqueeClass.style.display = "block";
+        marqueeButton.textContent = "v";
+        marqueeButton.style.bottom = marqueeHeight;
+    }
+    else{
+        marqueeClass.style.display = "none";
+        marqueeButton.textContent = "^";
+        marqueeButton.style.bottom = 0;
+    }
+})
 
 
 
